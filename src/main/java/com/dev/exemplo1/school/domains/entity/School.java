@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 @Entity
 public class School {
 
@@ -27,12 +26,12 @@ public class School {
     private LocalDateTime schoolDate;
     private boolean active = true;
 
+    public School(){}
+
     public School(SchoolCreateDTO data){
-        this.id = getId();
         this.code = data.code();
         this.designation = data.designation();
         this.address = data.address();
-        this.schoolDate = getSchoolDate();
         this.active = true;
     }
 
